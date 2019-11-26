@@ -47,10 +47,11 @@ class Search extends Component {
 
         return this.setState({ bookList: bookListCleaned, searchTerm: '' }); //after we call the api and clean up the list, we are going to set the state property bookList as bookListCleaned and then reset the searchTerm to empty
       })
-      .then(this.retriekveSavedBooks)
+      .then(this.retrieveSavedBooks)
       .catch(err => this.setState({ error: err }));
   };
 
+  //this function is basically going to call the api function getSavedBooks() and then the returned data will be mapped over and only return the bookId and put it in the savedBookIds variable and then updating the state
   retrieveSavedBooks = () => {
     getSavedBooks()
       .then(res => {
@@ -72,7 +73,7 @@ class Search extends Component {
 
   render() {
     return (
-      <>
+      <> {/*this is a fragment and an alternative to using div in case you don't want to use div */}
         <Jumbotron
           fluid
           bg={'dark'}

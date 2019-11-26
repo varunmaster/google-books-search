@@ -21,6 +21,7 @@ const Card = ({ bg, title, image, children }) => {
     <div className={bg ? `card bg-${bg} mb-2` : 'card mb-2'}>
       <div className={textColor}>
         {title && <h5 className={'card-header text-center'}>{title}</h5>}
+        {/* title ? <h5 className={'card-header text-center'}>{title}</h5> : null */}
         {image && (
           <img src={image} alt={title} className={'card-img img-fluid'} />
         )}
